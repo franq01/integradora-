@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="es"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Productos</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Contacto.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
+    <meta name="generator" content="Nicepage 4.15.11, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/papeleria.jpg"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Productos">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode" data-lang="es"><header class="u-clearfix u-header u-header" id="sec-d2c4"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="320" data-image-height="117">
+          <img src="images/papeleria.jpg" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-active-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-palette-2-base u-text-palette-3-light-1" href="Casa.html" style="padding: 10px 20px;">Casa</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-palette-2-base u-text-palette-3-light-1" href="Acerca-de.html" style="padding: 10px 20px;">Acerca de</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-palette-2-base u-text-palette-3-light-1" href="Contacto.html" style="padding: 10px 20px;">productos</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Casa.html">Casa</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Ace.html">Acerca de</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contacto.html">Productos</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header> 
+
+
+
+
+  </head>
+    <body ng-app='app' style="background-color: #ebebeb;" ng-controller='ctrMan' ng-cloack>
+
+        <div id="loader"></div>
+        <div id="ctnMan" style="visibility: hidden;">
+            <div class="w3-row {{clt}} fxd" >
+                <div class="w3-col w3-left w3-container bar-height" style="width:80px">
+                    <img id="lg" src="logo.png" class="w3-round bar-logo" alt="">
+                </div>
+                <div class="w3-col w3-left w3-container bar-height bar-neg">
+                    <h4 id="labNeg"  class="w3-merriweather" style="font-weight: bold; line-height: 22px;margin: 5px 0px; line-height: 25px; visibility: hidden;" ng-model="ngc">{{ngc}}</h4>
+                </div>
+                <div class="w3-col w3-right w3-center bar-height bar-cart" >
+                    <div ng-hide='!crt'>
+                        <i class="fa fa-shopping-cart  w3-xlarge pointer w3-left" ng-click='myCrt()' ></i>
+                        <span id="bdgCrt" class="w3-badge w3-red w3-small w3-left" style="margin-top:-5px;margin-left: 1px;">0</span>
+                    </div>
+
+                </div>
+                <div class="w3-rest bar-height">
+                    <input class="w3-input w3-border w3-round bar-search w3-merriweather" placeholder="{{txtBsc+'...'}}" type="text" maxlength="30" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" ng-model="srch" ng-init="srch=''" ng-Keyup="configPages()">
+                </div>
+            </div>
+            <div class="w3-container w3-merriweather w3-center {{clt}}  bar-neg-sub" style="margin-top:60px;" ng-model="ngc">
+                <h3 ng-hide="ngc.length>15">{{ngc}}</h3><h5 ng-hide="ngc.length<16">{{ngc}}</h5>
+            </div>
+
+
+            <div class="w3-row cnt-ctr-sml w3-merriweather w3-card">
+                <div class="w3-container w3-col s5 w3-center" >
+                    <div onclick="document.getElementById('modCtg').style.display='block'" ng-hide="ctgs.length<2">
+                        <h4 class="notSelTxt" style="color: {{cblu}};">{{txtCtg}}</h4>
+                    </div>
+
+
+
+                </div>
+                <div class="w3-container w3-col s2 w3-center"><h4 style="color: #00000021;">|</h4></div>
+                <div class="w3-container w3-col s5 w3-center" onclick="document.getElementById('modSrt').style.display='block'">
+                    <h4 class="notSelTxt" style="color: {{cblu}};">{{txtSrt}}</h4>
+                </div>
+            </div>
+
+            <div class="w3-container cnt-ctr-lar">
+
+                <div class="w3-left w3-merriweather" style="margin-left:50px;" ng-hide="ctgs.length<2">
+                    {{txtCtg}}
+                    <div class="w3-dropdown-hover w3-merriweather">
+                        <button class="w3-button {{clt}}" style="width:250px">{{txtCtgCrt}}</button>
+                        <div class="w3-dropdown-content w3-bar-block ctnCtgDro {{clt}}" >
+                            <a href="" class="w3-bar-item w3-button" ng-repeat='ctg in ctgs' ng-click='selCtg(ctg)'>{{ctg.n}}</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="w3-right w3-merriweather" style="margin-right:50px;">
+                    {{txtSrt}}
+                    <div class="w3-dropdown-hover w3-merriweather">
+                        <button class="w3-button {{clt}}" style="width:180px">{{txtSrtCrt}}</button>
+                        <div class="w3-dropdown-content w3-bar-block ctnSrtDro {{clt}}">
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(0)">{{txtAlf}}</a>
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(1)">{{txtMyp}}</a>
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(2)">{{txtMnp}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="w3-container spc50" >
+
+                <div ng-init='configPages()'  class="w3-row-padding ctnItm">
+                    <div class="w3-col s12 m6 l4" ng-repeat='itm in itmsCur | orderBy:sort| startFromGrid: currentPage * pageSize | limitTo: pageSize '>
+                        <div class="w3-panel w3-card w3-white mrgItm w3-merriweather">
+                            <div ng-hide="!img"  class="w3-container w3-margin-bottom w3-center" style="height: 260px">
+                                <img ng-hide="{{itm.l=='null'?true:false}}" src="{{itm.l+'.jpg'}}" class="w3-round thbGrd" onload="ajIm(this)">
+                                <i ng-hide="{{itm.l=='null'?false:true}}" class="fa fa-image w3-round thbGrd" style="margin-top:60px;"></i>
+
+                            </div>
+                            <div class="w3-margin-top w3-margin-bottom w3-border-bottom"></div>
+                            <p class="w3-small" style="line-height: 0.7;" ng-hide="cla">{{itm.k}}</p>
+                            <p class="w3-small" style="line-height: 0.7;" ng-hide="uni">{{itm.u}}</p>
+                            <p style="line-height: 1.1; height: 35px;">{{itm.d}}</p>
+
+                            <div class="w3-row w3-center w3-margin-top w3-margin-bottom" style="height:40px;">
+                                <div class="w3-col w3-right" style="width:60px">
+
+                                    <i class="fa fa-cart-plus w3-xxlarge pointer" ng-click='addCrt($event.currentTarget,itm)'  style="color: {{cblu}};" ng-hide='!crt'></i>
+                                </div>
+                                <div class="w3-rest w3-center">
+                                    <label ng-class="{'w3-large':itm.p.length>12,'w3-xlarge':itm.p.length<=12}">{{itm.p}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='btn-group w3-center spc50'>
+                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage == 0' ng-click='ntr()'>< {{txtPrv}}</button>
+                    <label class="w3-merriweather w3-large w3-margin-left pagCur">{{currentPage+1}}</label><label class="w3-merriweather w3-large w3-margin-right">{{' / '+ pages.length }}</label>
+                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage >= itmsCur.length/pageSize - 1' , ng-click='nxt()'>{{txtNxt}} ></button>
+                </div>
+
+            </div>
+
+            <br><br><br>
+            <footer class="w3-container w3-padding-32 spc50 {{clt}}">
+                <div class="w3-row-padding w3-center">
+                    <div class="{{ txtInf==null||txtInf==''?'':'w3-half' }}" ng-hide="txtTel==null||txtTel==''?true:false">
+                        <div class="w3-container" id="contact">
+                            <h4 class="w3-merriweather">{{ngc}}</h4>
+                            <a href="tel:{{txtTel}}" ><i class="fa fa-phone"></i>{{txtTel}}</a><br>
+                            <a class="w3-margin-top" href="mailto:{{txtCor}}" ng-hide="txtCor==''||txtCor==null?true:false"><i class="fa fa-envelope"></i>{{txtCor}}</a>
+                        </div>
+                    </div>
+
+                    <div class="{{ txtTel==null||txtTel==''?'':'w3-half' }}" ng-hide="txtInf==null||txtInf==''?true:false">
+                        <p id="textInf" ></p>
+                    </div>
+
+
+                </div>
+                <div style="height:90px" ng-hide="!wat"></div>
+            </footer>
+            <a ng-hide="!wat" href="https://api.whatsapp.com/send?phone={{txtTel}}" class="btnWhts" target="_blank">
+                <i class="fa fa-whatsapp w3-xxxlarge"></i>
+            </a>
+
+
+            <div id="modCrt" class="w3-modal" style="padding-top:30px;z-index: 3000;">
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;overflow: auto; height: 90%;">
+
+                    <div class="w3-center"><br>
+                        <span onclick="document.getElementById('modCrt').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">{{clo}} &times;</span>
+                    </div>
+                    <form class="w3-container w3-margin-top" ng-submit="snd()">
+                        <div class="w3-section">
+                            <div class="w3-padding-small">
+                                <i class="fa fa-user w3-xlarge inpDraLef"></i><input class="w3-input w3-border" style="padding-left: 35px;" placeholder="{{txtPlaNam}}" type="text" ng-model="namc" required>
+                            </div>
+
+                            <input class="w3-button w3-block w3-section w3-padding w3-margin-top w3-merriweather {{clt}}" type="submit" value="{{txtSct}}"  ng-hide="btc">
+                            <div class="w3-center" ng-hide="lod"><i class="fa fa-spinner w3-jumbo w3-spin"></i></div>
+                            <p ng-hide="itmsCrt.itms.length>0?true:false"  class="w3-display-middle">{{txtSin}}</p>
+                            <div class="w3-row w3-border-bottom w3-padding-16" ng-repeat='itm in itmsCrt.itms'>
+                                <div ng-hide="!img"  class="w3-col s3 m2 l2 w3-center">
+                                    <img ng-hide="{{itm.l=='null'?true:false}}" src="{{itm.l+'.jpg'}}" class="w3-round" style="width:90%;">
+
+                                    <i ng-hide="{{itm.l=='null'?false:true}}" class="fa fa-image w3-jumbo w3-round" style="width:90%;"></i>
+
+                                </div>
+                                <div class="w3-col s9 m10 l10">
+                                    <span class="w3-margin-left w3-merriweather" ng-hide="cla">{{itm.k}}</span><br>
+                                    <span class="w3-margin-left w3-merriweather" ng-hide="uni">{{itm.u}}</span><br>
+                                    <span class="w3-margin-left w3-merriweather">{{itm.d}}</span>
+                                    <div class="w3-row">
+                                        <div class="w3-col s2 m5 l5 w3-text-red">
+                                            <i class="fa fa-trash w3-xlarge w3-right" style="margin-top: 5px;" ng-click='delItmCrt(itm)'></i>
+                                        </div>
+                                        <div class="w3-col s10 m7 l7 ">
+                                            <i class="fa fa-plus-circle w3-xlarge w3-margin-right w3-right" ng-click='itm.q=itm.q+1' style="margin-top: 5px;"></i>
+
+                                            <span class="w3-margin-left w3-margin-right w3-xlarge w3-right"><input class="inNum" type="text" ng-model="itm.q" ></span>
+                                            <i class="fa fa-minus-circle w3-xlarge w3-right" ng-click='itm.q=itm.q-1<0?itm.q:itm.q-1' style="margin-top: 5px;"></i>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+
+            <div id="modSrt" class="w3-modal" style="z-index: 3000;">
+                <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container {{clt}}">
+                        <span onclick="document.getElementById('modSrt').style.display='none'"
+                                class="w3-button w3-display-topright">&times;</span>
+                        <h2>{{txtSrt}}</h2>
+                    </header>
+                    <div class="w3-container">
+                        <ul class="w3-ul w3-border-bottom">
+                            <li class="w3-container notSelTxt" ng-click="selSrt(0)">{{txtAlf}}</li>
+                            <li class="w3-container notSelTxt" ng-click="selSrt(1)">{{txtMyp}}</li>
+                            <li class="w3-container notSelTxt" ng-click="selSrt(2)">{{txtMnp}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modCtg" class="w3-modal" style="z-index: 3000;">
+                <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container {{clt}}">
+                        <span onclick="document.getElementById('modCtg').style.display='none'"
+                                class="w3-button w3-display-topright">&times;</span>
+                        <h2>{{txtCtg}}</h2>
+                    </header>
+                    <div class="w3-container" style="overflow: auto; max-height: 320px;">
+                        <ul class="w3-ul w3-monospace" ng-repeat='ctg in ctgs'>
+                            <li class="w3-border-bottom w3-container" ng-click='selCtg(ctg)'>{{ctg.n}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <script type="text/javascript">
+
+			angular.module('app', [])
+			  .controller('ctrMan',
+			    function($scope) {
+			      var modCtg = document.getElementById('modCtg');
+			      var modSrt = document.getElementById('modSrt');
+			      var modCrt = document.getElementById('modCrt');
+			      var bdgCrt = document.getElementById("bdgCrt");
+			      window.onclick = function(event) {
+			        if (event.target == modCtg) {
+			          modCtg.style.display = "none";
+			        }else if(event.target == modSrt){
+			          modSrt.style.display = "none";
+			        }
+			        else if(event.target == modCrt){
+			          modCrt.style.display = "none";
+			        }
+			      }
+			      $scope.currentPage = 0;
+			      $scope.pagSiz = 0;
+			      $scope.pageSize = 6;
+			      $scope.pages = [];
+			      $scope.itms = [];
+			      $scope.itmsCur = [];
+			      $scope.ctgs = [];
+			      $scope.itmsCrt = [];
+			      $scope.txtSrt = '...';
+			      $scope.txtCtg = '...';
+			      $scope.txtAlf = '...';
+			      $scope.txtMay = '...';
+			      $scope.txtMen = '...';
+			      $scope.txtNxt = '...';
+			      $scope.txtPrv = '...';
+			      $scope.txtSrtCrt = $scope.txtAlf;
+			      $scope.sort = 'd';
+			      $scope.ctg = '';
+			      $scope.txtTel='';
+			      $scope.txtCor='';
+			      $scope.txtInf='';
+			      $scope.txtSct='';
+			      $scope.txtPlaNam='';
+			      $scope.txtSct='';
+			      $scope.txtSin='';
+			      $scope.uni = false;
+			      $scope.cla = false;
+			      $scope.wat = false;
+			      $scope.crt = false;
+			      $scope.lod = true;
+			      $scope.btc = false;
+			      $scope.img = true;
+			      $scope.ctok='';
+			      $scope.ernw='';
+			      $scope.clt = 'w3-black';
+			      $scope.cblu = '#1A73E8';
+			      $scope.cgre = '#33AA66';
+			      $scope.clo = 'close';
+
+				  $scope.configPages = function() {
+				  		var q = $scope.srch;
+				  		try{
+				  			q = $scope.srch.replace(" ","");
+				  		}catch(e){
+
+				  		}
+				        if($scope.ctg=='' && q=='' ){
+				            $scope.itmsCur = $scope.itms;
+				        }else{
+
+				        	if(q != ''){
+				        		$scope.txtCtgCrt = $scope.ctgs[0].n;
+				        		$scope.ctg = 0;
+				        		$scope.currentPage = 0;
+				        	}
+				            $scope.itmsCur = [];
+				            try{
+				            	$scope.itms.forEach( function(val, ind, arr) {
+
+					                var ax = q==""?true:(val.d.toUpperCase().search(q.toUpperCase() ) > -1  );
+
+					                if( ($scope.ctg=='' || val.c==$scope.ctg) && ax ){
+					                    $scope.itmsCur.push(val);
+					                }
+					            });
+				            }catch(e){
+
+				            }
+				        }
+				        var intRef = 20;
+				        $scope.pages.length = 0;
+				        var ini = $scope.currentPage - 4;
+				        var fin = $scope.currentPage + 5;
+				        if (ini < 1) {
+				          ini = 1;
+				          fin = Math.ceil($scope.itmsCur.length / $scope.pageSize);
+				        } else {
+				            ini = -1;
+				            fin = Math.ceil($scope.itmsCur.length / $scope.pageSize);
+				        }
+				        if (ini < 1) ini = 1;
+				        for (var i = ini; i <= fin; i++) {
+				          $scope.pages.push({
+				            no: i
+				          });
+				        }
+				        if ($scope.currentPage >= $scope.pages.length)
+				          $scope.currentPage = $scope.pages.length;
+				      };
+
+
+
+			      $scope.setPage = function(index) {
+			        $scope.currentPage = index - 1;
+			      };
+
+			      $scope.nxt = function() {
+			        $scope.currentPage = $scope.currentPage + 1;
+			        topScr();
+			      };
+			      $scope.ntr = function() {
+			      	$scope.currentPage = $scope.currentPage - 1;
+			        topScr();
+			      };
+
+
+			      $scope.addCrt = function(e,itm){
+			        e.setAttribute('class','fa fa-check-circle w3-xxlarge pointer');
+			        e.style.color = $scope.cgre;
+				    addItmCrt(itm);
+				    setTimeout(function () {
+				      e.setAttribute('class','fa fa-cart-plus w3-xxlarge pointer');
+				      e.style.color = $scope.cblu;
+				    }, 600);
+
+
+			      }
+
+			      $scope.myCrt = function(){
+			        modCrt.style.display='block';
+			        $scope.itmsCrt = getStg();
+			      }
+			      $scope.delItmCrt = function(itm){
+			        $scope.itmsCrt = delItmCrt(itm);
+			      }
+			      $scope.selSrt = function(sel){
+			        switch(sel) {
+			          case 0:
+			            $scope.txtSrtCrt = $scope.txtAlf;
+			            $scope.sort = 'd';
+			            break;
+			          case 1:
+			            $scope.txtSrtCrt = $scope.txtMyp;
+			            $scope.sort = '-v';
+			            break;
+			          case 2:
+			            $scope.txtSrtCrt = $scope.txtMnp;
+			            $scope.sort = 'v';
+			            break;
+			        }
+			        modSrt.style.display = "none";
+			      }
+			      $scope.selCtg = function(ctg){
+
+			        $scope.txtCtgCrt = ctg.n;
+			        $scope.ctg = ctg.i==0?'':ctg.i;
+			        modCtg.style.display = "none";
+			        $scope.currentPage = 0;
+			        $scope.srch = '';
+			        $scope.configPages();
+			      }
+			      $scope.srchAll = function(){
+			        console.log("mycart: "+$scope.srch);
+
+			      }
+			      $scope.snd = function(){
+
+			        var text = $scope.txtPlaNam+": "+$scope.namc+"\n\n";
+			        var suc = true;
+
+			        $scope.itmsCrt.itms.forEach( function(v, i, ar) {
+
+			        	if( !(!isNaN(v.q) && !isNaN(parseFloat(v.q) ) ) ){
+			        		suc = false;
+			        		return;
+			        	}
+
+			            text += "*"+v.q+" -> "+v.d+" :"+ v.u+" : "+v.k+"\n";
+			        });
+
+			        if(suc){
+			        	setStg({});
+			            $scope.itmsCrt = [];
+			            bdgCrt.style.visibility = "hidden";
+			            modCrt.style.display = "none";
+
+				        window.open(
+				          encodeURI('https://api.whatsapp.com/send?phone='+$scope.txtTel+'&text='+text),
+				          '_blank'
+				        );
+			        }else{
+			        	alert("only numeric values");
+			        }
+
+
+			      }
+			      addItmCrt(null);
+			      var unts = {};
+			      var result = data;
+
+
+			        var ctnMan = document.getElementById("ctnMan");
+			        ctnMan.style.visibility = "visible";
+			        var loader = document.getElementById("loader");
+			        loader.style.visibility = "hidden";
+			        var lg_v = document.getElementById("lg");
+			        var ngc = result.ngc;
+
+
+			        $scope.txtSrt = result.orp;
+			        $scope.txtCtg = result.ctgs;
+			        $scope.txtAlf = result.alf;
+			        $scope.txtMyp = result.myp;
+			        $scope.txtMnp = result.mnp;
+			        $scope.txtBsc = result.bsc;
+			        $scope.txtNxt = result.nxt;
+			      	$scope.txtPrv = result.prv;
+			        $scope.ctok = result.ctok;
+			        $scope.ernw = result.ernw;
+
+			        $scope.txtTel = result.tel2;
+			        $scope.txtCor = result.cor2;
+			        $scope.txtInf = result.dir2;
+
+			        $scope.img = result.img;
+
+			        $scope.uni = !result.uni;
+			        $scope.cla = !result.cla;
+			        $scope.clo = result.clo;
+
+
+			        $scope.wat = result.wha&&result.tel2!='';
+			        $scope.crt = result.crt&&result.tel2!='';
+			        $scope.txtSct = result.sct;
+			        $scope.txtPlaNam = result.nam;
+
+			        $scope.txtSin = result.sin;
+
+			        $scope.txtSct = result.sct;
+			        $scope.txtSrtCrt = $scope.txtAlf;
+
+			        $scope.clt = result.clt;
+			        $scope.ngc = ngc;
+
+
+			        if(result.lg.length>0){
+			          $scope.lg = result.lg;
+			        }else{
+			          lg_v.style.visibility = "hidden";
+			          $scope.lg = "0=="
+			        }
+
+			        result.und.forEach( function(val, ind, arr) {
+			            unts[val.i] = val.n;
+			        });
+
+
+			        $scope.itms = result.itm;
+			        $scope.ctgs = result.ctg;
+			        $scope.txtCtgCrt = $scope.ctgs[0].n;
+
+
+			        $scope.itms.forEach( function(val, ind, arr) {
+			            val.u = unts[val.u];
+
+			        });
+
+
+
+			        var link = document.createElement('link');
+			        link.rel = 'icon';
+			        document.getElementsByTagName('head')[0].appendChild(link);
+			        link.href = 'logo.png';
+			        $scope.currentPage = 1;
+			        $scope.configPages();
+			        topScr();
+					setTimeout(function () {
+				      	var el = document.getElementById('labNeg');
+					   	var divHeight = el.offsetHeight
+					   	var lineHeight = parseInt(el.style.lineHeight);
+					   	var lines = divHeight / lineHeight;
+	    				if( lines < 2){
+	    					el.style.lineHeight = "50px";
+	    				}
+	    				if($scope.ngc.length>25){
+							el.style.fontSize = "16px";
+	    				}
+	    				if($scope.ngc.length>40){
+							el.style.fontSize = "14px";
+	    				}
+	    				el.style.visibility = "visible";
+				    }, 400);
+			    })
+			.filter('startFromGrid', function() {
+			  return function(input, start) {
+			    start = +start;
+			    return input.slice(start);
+			  }
+			});
+			var stgLoc={};
+            function stgChk(){
+                var test = 'test';
+                try {
+                    localStorage.setItem(test, test);
+                    localStorage.removeItem(test);
+                    return true;
+                } catch(e) {
+                    return false;
+                }
+            }
+            function getStg(){
+                if( stgChk() ){
+                  var itmsAux = localStorage.getItem("mn_shop_13x");
+                  return itmsAux==null?{}:JSON.parse(itmsAux);
+                }else{
+                  return stgLoc;
+                }
+            }
+            function setStg(itms){
+                if( stgChk() ){
+                  localStorage.setItem("mn_shop_13x", JSON.stringify(itms) );
+                }else{
+                  stgLoc = itms;
+                }
+            }
+			function addItmCrt(itm){
+			    var itmsCrt = getStg();
+			    if(itmsCrt.itms==undefined){
+			        itmsCrt.itms = [];
+			        if(itm!=null){
+			          itm.q = 1;
+			          itmsCrt.itms.push(itm);
+			        }
+			      }else if(itm!=null){
+			          var aux = null;
+			          for(var i=0;i<itmsCrt.itms.length;i++){
+			            if(itmsCrt.itms[i].i==itm.i){
+			                aux=itmsCrt.itms[i];
+			                break;
+			              }
+			          }
+			          if(aux==null){
+			            itm.q = 1;
+			            itmsCrt.itms.push(itm);
+			          }else{
+			            aux.q +=1;
+			          }
+
+			      }
+			    setStg(itmsCrt);
+			    bdgCrt.innerHTML = itmsCrt.itms.length;
+			    bdgCrt.style.visibility = itmsCrt.itms.length==0? "hidden":"visible";
+
+			}
+			function delItmCrt(itm){
+			    var itmsCrt = getStg();
+			    var ind = -1;
+			    for(var i=0;i<itmsCrt.itms.length;i++){
+			      if(itmsCrt.itms[i].i==itm.i){
+			          ind=i;
+			          break;
+			        }
+			    }
+			    if(ind>-1){
+			      itmsCrt.itms.splice(ind, 1);
+			    }
+			    setStg(itmsCrt);
+			    bdgCrt.innerHTML = itmsCrt.itms.length;
+			    bdgCrt.style.visibility = itmsCrt.itms.length==0? "hidden":"visible";
+			    return itmsCrt;
+			}
+			function topScr() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+			function ajIm(el){
+				el.style.marginTop = ((260-el.offsetHeight)/2)+"px";
+			}
+			var data = /*#d4t4#*/ {"itm":[{"c":8,"d":"AUDIFONOS MOREKA ST3","i":114,"k":"Sin Clave","l":"img_114","p":"$350.00","u":0,"v":350,"z":10},{"c":8,"d":"CABLE RGB ADAPTADOR CON PIN","i":92,"k":"Sin Clave","l":"img_92","p":"$20.00","u":0,"v":20,"z":10},{"c":8,"d":"CARGADOR AUTO 1HORA","i":90,"k":"Sin Clave","l":"img_90","p":"$80.00","u":0,"v":80,"z":10},{"c":8,"d":"CONTROLADOR DIMMER PARA TIRAS LED","i":86,"k":"Sin Clave","l":"img_86","p":"$70.00","u":0,"v":70,"z":10},{"c":8,"d":"CONTROLADOR RGB PARA TIRAS","i":85,"k":"Sin Clave","l":"img_85","p":"$100.00","u":0,"v":100,"z":10},{"c":8,"d":"ESCANER AUTOMOTRIZ","i":93,"k":"Sin Clave","l":"img_93","p":"$240.00","u":0,"v":240,"z":10},{"c":8,"d":"FUNDA PROTECCION AGUA CELULAR","i":95,"k":"Sin Clave","l":"img_95","p":"$35.00","u":0,"v":35,"z":10},{"c":8,"d":"FUSIBLE 02 AMPERES","i":74,"k":"Sin Clave","l":"img_74","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 03 AMPERES","i":73,"k":"Sin Clave","l":"img_73","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 05 AMPERES","i":72,"k":"Sin Clave","l":"img_72","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 07.5 AMPERES","i":70,"k":"Sin Clave","l":"img_70","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 10 AMPERES","i":69,"k":"Sin Clave","l":"img_69","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 15 AMPERES","i":68,"k":"Sin Clave","l":"img_68","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 20 AMPERES","i":67,"k":"Sin Clave","l":"img_67","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 25 AMPERES","i":66,"k":"Sin Clave","l":"img_66","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 30 AMPERES","i":65,"k":"Sin Clave","l":"img_65","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 35 AMPERES","i":64,"k":"Sin Clave","l":"img_64","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE 40 AMPERES","i":63,"k":"Sin Clave","l":"img_63","p":"$5.00","u":0,"v":5,"z":10},{"c":8,"d":"FUSIBLE MINI 02 AMPERES","i":84,"k":"Sin Clave","l":"img_84","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 03 AMPERES","i":83,"k":"Sin Clave","l":"img_83","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 05 AMPERES","i":71,"k":"Sin Clave","l":"img_71","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 07.5 AMPERES","i":82,"k":"Sin Clave","l":"img_82","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 10 AMPERES","i":81,"k":"Sin Clave","l":"img_81","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 15 AMPERES","i":80,"k":"Sin Clave","l":"img_80","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 20 AMPERES","i":76,"k":"Sin Clave","l":"img_76","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 25 AMPERES","i":79,"k":"Sin Clave","l":"img_79","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 30 AMPERES","i":77,"k":"Sin Clave","l":"img_77","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 35 AMPERES","i":75,"k":"Sin Clave","l":"img_75","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"FUSIBLE MINI 40 AMPERES","i":78,"k":"Sin Clave","l":"img_78","p":"$4.00","u":0,"v":4,"z":10},{"c":8,"d":"INTERRUPTOR PARA MOTO UNIVERSAL ROJO-NEGRO","i":89,"k":"Sin Clave","l":"img_89","p":"$80.00","u":0,"v":80,"z":10},{"c":8,"d":"PAR PIVOTES COLOR VERDE","i":94,"k":"Sin Clave","l":"img_94","p":"$100.00","u":0,"v":100,"z":10},{"c":8,"d":"PEGATINAS STICKERS 10 CM","i":58,"k":"Sin Clave","l":"img_58","p":"$10.00","u":0,"v":10,"z":10},{"c":8,"d":"SUP 400 JUEGOS","i":113,"k":"Sin Clave","l":"img_113","p":"$250.00","u":0,"v":250,"z":10},{"c":7,"d":"AMPLIFICADOR 1 CANAL QUANTUM AUDIO QEA2500.1","i":14,"k":"Sin Clave","l":"img_14","p":"$3,505.00","u":0,"v":3505,"z":10},{"c":7,"d":"AMPLIFICADOR 1 CANAL STEELPRO NANO 2500W SOLO POR PEDIDO","i":23,"k":"Sin Clave","l":"img_23","p":"$2,250.00","u":0,"v":2250,"z":10},{"c":7,"d":"AMPLIFICADOR 1 CANAL STEELPRO POTENZA 1600","i":17,"k":"Sin Clave","l":"img_17","p":"$2,990.00","u":0,"v":2990,"z":10},{"c":7,"d":"AMPLIFICADOR 2 CANALES + SUBWOOFER LVPIN ESTEREO 2.1 SUBWOOFER","i":115,"k":"Sin Clave","l":"img_115","p":"$680.00","u":0,"v":680,"z":10},{"c":7,"d":"AMPLIFICADOR 2 CANALES 900W DXR \/ RCA","i":138,"k":"Sin Clave","l":"img_138","p":"$450.00","u":0,"v":450,"z":10},{"c":7,"d":"AMPLIFICADOR 4 CANALES DUB BY AUDIOBAHN 2400W CSOLO POR PEDIDO","i":22,"k":"Sin Clave","l":"img_22","p":"$1,898.00","u":0,"v":1898,"z":10},{"c":7,"d":"AMPLIFICADOR 4 CANALES QUANTUM QEA800.4","i":16,"k":"Sin Clave","l":"img_16","p":"$3,350.00","u":0,"v":3350,"z":10},{"c":7,"d":"AMPLIFICADOR 4 CANALES TREO DYMAMIC4","i":18,"k":"Sin Clave","l":"img_18","p":"$2,580.00","u":0,"v":2580,"z":10},{"c":7,"d":"AMPLIFICADOR 5 CANALES JC-POWER JC1800.5 SOLO POR PEDIDO","i":21,"k":"Sin Clave","l":"img_21","p":"$5,500.00","u":0,"v":5500,"z":10},{"c":6,"d":"AUTOESTEREO 1 DIN BLUETOOTH","i":13,"k":"Sin Clave","l":"img_13","p":"$568.00","u":0,"v":568,"z":10},{"c":6,"d":"AUTOESTÉREO CONTROL POR VOZ","i":8,"k":"Sin Clave","l":"img_8","p":"$640.00","u":0,"v":640,"z":10},{"c":6,"d":"AUTOESTÉREO DIGITAL SISTEM AUDIO RCA","i":7,"k":"Sin Clave","l":"img_7","p":"$800.00","u":0,"v":800,"z":10},{"c":6,"d":"AUTOESTÉREO DINAMIC SOUL","i":10,"k":"Sin Clave","l":"img_10","p":"$569.00","u":0,"v":569,"z":10},{"c":6,"d":"AUTOESTÉREO HIFI CAR MUSIC","i":12,"k":"Sin Clave","l":"img_12","p":"$568.00","u":0,"v":568,"z":10},{"c":6,"d":"AUTOESTÉREO JSD MONITOR INTERACTIVE","i":9,"k":"Sin Clave","l":"img_9","p":"$575.00","u":0,"v":575,"z":10},{"c":6,"d":"AUTOESTÉREO PANTALLA 7\"","i":6,"k":"Sin Clave","l":"img_6","p":"$1,700.00","u":0,"v":1700,"z":10},{"c":6,"d":"AUTOESTÉREO RETRO VINTAGE ANTIROBO","i":11,"k":"Sin Clave","l":"img_11","p":"$589.00","u":0,"v":589,"z":10},{"c":1,"d":"PAR BOCINAS PLANAS 6.5\"\r\nMEGA POWER\r\nSLIM","i":1,"k":"Sin Clave","l":"img_1","p":"$350.00","u":0,"v":350,"z":10},{"c":4,"d":"KIT BOCINAS 6.5\" KICKER DSC6504","i":15,"k":"Sin Clave","l":"img_15","p":"$1,020.00","u":0,"v":1020,"z":10},{"c":4,"d":"KIT BOCINAS DB BASS CAYMAN 6.5","i":53,"k":"Sin Clave","l":"img_53","p":"$1,250.00","u":0,"v":1250,"z":10},{"c":4,"d":"KIT BOCINAS QUANTUM QS65 3 VIAS","i":55,"k":"Sin Clave","l":"img_55","p":"$1,650.00","u":0,"v":1650,"z":10},{"c":4,"d":"KIT BOCINAS SOUNDSTREAM 6.5\" 3 VIAS","i":54,"k":"Sin Clave","l":"img_54","p":"$1,860.00","u":0,"v":1860,"z":10},{"c":4,"d":"KIT BOCINAS SOUNDSTREAM TARÁNTULA","i":56,"k":"Sin Clave","l":"img_56","p":"$1,450.00","u":0,"v":1450,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 3.5\" 2 VIAS KICKER DSC350","i":49,"k":"Sin Clave","l":"img_49","p":"$650.00","u":0,"v":650,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 4\" 2 VIAS KICKER DSC40","i":44,"k":"Sin Clave","l":"img_44","p":"$750.00","u":0,"v":750,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 5.25\" 2 VIAS CARBÓN AUDIO","i":48,"k":"Sin Clave","l":"img_48","p":"$750.00","u":0,"v":750,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 2 VIAS CLARION SRE1601R","i":51,"k":"Sin Clave","l":"img_51","p":"$900.00","u":0,"v":900,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 2 VIAS CLARION SRG1623R","i":52,"k":"Sin Clave","l":"img_52","p":"$900.00","u":0,"v":900,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 2 VIAS DB DRIVE DB6","i":34,"k":"Sin Clave","l":"img_34","p":"$990.00","u":0,"v":990,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 2 VIAS DB DRIVE EUPHORIA ES3","i":24,"k":"Sin Clave","l":"img_24","p":"$1,100.00","u":0,"v":1100,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 2 VIAS JC POWER JC6525","i":31,"k":"Sin Clave","l":"img_31","p":"$880.00","u":0,"v":880,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 2 VIAS JENSEN US295","i":32,"k":"Sin Clave","l":"img_32","p":"$770.00","u":0,"v":770,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 2 VIAS NAKAMICHI NSE1617","i":27,"k":"Sin Clave","l":"img_27","p":"$880.00","u":0,"v":880,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 2 VIAS STEELPRO","i":4,"k":"Sin Clave","l":"img_4","p":"$650.00","u":0,"v":650,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 3 VIAS AUDIOBAHN AS63S","i":37,"k":"Sin Clave","l":"img_37","p":"$880.00","u":0,"v":880,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 3 VIAS QUANTUM QS65","i":46,"k":"Sin Clave","l":"img_46","p":"$1,100.00","u":0,"v":1100,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 3 VIAS ROCK SERIES","i":119,"k":"Sin Clave","l":"img_119","p":"$850.00","u":0,"v":850,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 3 VIAS SOUNDSTREAM LX650","i":36,"k":"Sin Clave","l":"img_36","p":"$880.00","u":0,"v":880,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 3 VIAS TREO STUDIO65","i":50,"k":"Sin Clave","l":"img_50","p":"$650.00","u":0,"v":650,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 4 VIAS AUDIOBAHN INMORTAL AS6.5I","i":33,"k":"Sin Clave","l":"img_33","p":"$990.00","u":0,"v":990,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6.5\" 4 VIAS HYPNOTIC HS60","i":30,"k":"Sin Clave","l":"img_30","p":"$1,000.00","u":0,"v":1000,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6X9 3 VIAS SOUNDSTREAM XP6964","i":35,"k":"Sin Clave","l":"img_35","p":"$1,200.00","u":0,"v":1200,"z":10},{"c":4,"d":"PAR BOCINAS COAXIALES 6X9\" 4 VIAS ROCK SERIES RKS-694","i":25,"k":"Sin Clave","l":"img_25","p":"$1,150.00","u":0,"v":1150,"z":10},{"c":4,"d":"PAR BOCINAS PLANAS 6.5\" MEGA POWER SLIM","i":139,"k":"Sin Clave","l":"img_139","p":"$350.00","u":0,"v":350,"z":10},{"c":4,"d":"PAR BOCINAS PLANAS 6.5\" PIONEER TS-G650","i":47,"k":"Sin Clave","l":"img_47","p":"$990.00","u":0,"v":990,"z":10},{"c":4,"d":"PAR TWEETER BALA 3.5\" KRACK TITANIO","i":26,"k":"Sin Clave","l":"img_26","p":"$450.00","u":0,"v":450,"z":10},{"c":4,"d":"PAR TWEETER DOMO 2\" DXR","i":137,"k":"Sin Clave","l":"img_137","p":"$120.00","u":0,"v":120,"z":10},{"c":4,"d":"PIEZA TWEETER BALA 3.8\" HARDEN KTB-285C","i":38,"k":"Sin Clave","l":"img_38","p":"$650.00","u":0,"v":650,"z":10},{"c":4,"d":"PIEZA TWEETER BALA 3.8\" MEGA POWER","i":41,"k":"Sin Clave","l":"img_41","p":"$228.00","u":0,"v":228,"z":10},{"c":4,"d":"SET DE MEDIOS CARBÓN AUDIO","i":29,"k":"Sin Clave","l":"img_29","p":"$1,350.00","u":0,"v":1350,"z":10},{"c":4,"d":"SET DE MEDIOS CERWIN VEGA","i":28,"k":"Sin Clave","l":"img_28","p":"$1,630.00","u":0,"v":1630,"z":10},{"c":4,"d":"SUBWOOFER 10\" JC POWER JC-10D4","i":40,"k":"Sin Clave","l":"img_40","p":"$1,320.00","u":0,"v":1320,"z":10},{"c":4,"d":"SUBWOOFER 12\" JC POWER JC-12D4","i":39,"k":"Sin Clave","l":"img_39","p":"$1,220.00","u":0,"v":1220,"z":10},{"c":4,"d":"SUBWOOFER 12\" QUANTUM AUDIO Q1000","i":45,"k":"Sin Clave","l":"img_45","p":"$1,880.00","u":0,"v":1880,"z":10},{"c":4,"d":"SUBWOOFER 12\" STEELPRO SPL-12X","i":19,"k":"Sin Clave","l":"img_19","p":"$1,660.00","u":0,"v":1660,"z":10},{"c":4,"d":"SUBWOOFER 6.5\" FOSTER 250W MÁXIMO","i":57,"k":"Sin Clave","l":"img_57","p":"$700.00","u":0,"v":700,"z":10},{"c":4,"d":"WOOFER 10\" SOGY S-101","i":20,"k":"Sin Clave","l":"img_20","p":"$870.00","u":0,"v":870,"z":10},{"c":4,"d":"WOOFER 15\" CUBIERTA ROJA","i":116,"k":"Sin Clave","l":"img_116","p":"$1,127.00","u":0,"v":1127,"z":10},{"c":4,"d":"WOOFER 8\" MEGA POWER 065-267","i":43,"k":"Sin Clave","l":"img_43","p":"$1,100.00","u":0,"v":1100,"z":10},{"c":4,"d":"WOOFER 8\" SOGY S801","i":42,"k":"Sin Clave","l":"img_42","p":"$890.00","u":0,"v":890,"z":10},{"c":12,"d":"PAR BARRAS 12 HIPERLED TUNIX","i":101,"k":"Sin Clave","l":"img_101","p":"$280.00","u":0,"v":280,"z":10},{"c":12,"d":"PAR FARO 6 LEDS FIA+ESTROBO","i":105,"k":"Sin Clave","l":"img_105","p":"$180.00","u":0,"v":180,"z":10},{"c":12,"d":"PAR FARO LED REDONDO AUXILIAR 9 LED FIJA","i":104,"k":"Sin Clave","l":"img_104","p":"$220.00","u":0,"v":220,"z":10},{"c":12,"d":"PAR FARO LED REDONDO AUXILIAR 9 LED ITALIO TURBO","i":103,"k":"Sin Clave","l":"img_103","p":"$220.00","u":0,"v":220,"z":10},{"c":12,"d":"PAR FARO LED REDONDO AUXILIAR 9 LED VERSION MINI FIJA","i":108,"k":"Sin Clave","l":"img_108","p":"$200.00","u":0,"v":200,"z":10},{"c":12,"d":"PAR FAROS LED AUXILIARES 12 LED AMBAR","i":109,"k":"Sin Clave","l":"img_109","p":"$300.00","u":0,"v":300,"z":10},{"c":12,"d":"PAR FAROS LED AUXILIARES 12 LED AZUL","i":107,"k":"Sin Clave","l":"img_107","p":"$300.00","u":0,"v":300,"z":10},{"c":12,"d":"PAR FAROS LED AUXILIARES 16 LEDS ROJO","i":117,"k":"Sin Clave","l":"img_117","p":"$300.00","u":0,"v":300,"z":10},{"c":12,"d":"PAR FOCO FARO LED T10 PELLIZCO RGB","i":120,"k":"Sin Clave","l":"img_120","p":"$140.00","u":0,"v":140,"z":10},{"c":12,"d":"PAR OJO DE ÁGUILA COLOR AZUL TIPO XENON 2.3\"","i":121,"k":"Sin Clave","l":"img_121","p":"$120.00","u":0,"v":120,"z":10},{"c":11,"d":"PAR MODULO FLECHA RETROVISOR ROJO","i":96,"k":"Sin Clave","l":"img_96","p":"$120.00","u":0,"v":120,"z":10},{"c":11,"d":"PIEZA MODULO LATERAL AMBAR 6 LEDS","i":97,"k":"Sin Clave","l":"img_97","p":"$35.00","u":0,"v":35,"z":10},{"c":11,"d":"PIEZA MODULO LATERAL AZUL 6 LEDS","i":98,"k":"Sin Clave","l":"img_98","p":"$35.00","u":0,"v":35,"z":10},{"c":11,"d":"PIEZA MODULO LATERAL ROJO 6 LEDS","i":99,"k":"Sin Clave","l":"img_99","p":"$35.00","u":0,"v":35,"z":10},{"c":11,"d":"PIEZA MODULO LED AMBAR 5050","i":100,"k":"Sin Clave","l":"img_100","p":"$15.00","u":0,"v":15,"z":10},{"c":11,"d":"PIEZA MODULO LED AZUL 5050","i":128,"k":"Sin Clave","l":"img_128","p":"$15.00","u":0,"v":15,"z":10},{"c":11,"d":"PIEZA MODULO LED BLANCO 5050","i":127,"k":"Sin Clave","l":"img_127","p":"$15.00","u":0,"v":15,"z":10},{"c":11,"d":"PIEZA MODULO LED REDONDO ROJO","i":91,"k":"Sin Clave","l":"img_91","p":"$18.00","u":0,"v":18,"z":10},{"c":11,"d":"PIEZA MODULO LED ROJO 5050","i":129,"k":"Sin Clave","l":"img_129","p":"$15.00","u":0,"v":15,"z":10},{"c":11,"d":"PIEZA MODULO LED ROJO 5630","i":123,"k":"Sin Clave","l":"img_123","p":"$18.00","u":0,"v":18,"z":10},{"c":11,"d":"PIEZA MODULO LED VERDE 5050","i":126,"k":"Sin Clave","l":"img_126","p":"$15.00","u":0,"v":15,"z":10},{"c":9,"d":"CUENTAS STREAMING VARIEDAD PROMOCIONES","i":61,"k":"Sin Clave","l":"img_61","p":"$100.00","u":0,"v":100,"z":10},{"c":9,"d":"INSTALACIÓN DE AUTOESTÉREOS Y AUDIO EN GENERAL","i":60,"k":"Sin Clave","l":"img_60","p":"$150.00","u":0,"v":150,"z":10},{"c":9,"d":"PAGO DE SERVICIOS LUZ CABLE INTERNET","i":59,"k":"Sin Clave","l":"img_59","p":"$1.00","u":0,"v":1,"z":10},{"c":9,"d":"RECARGAS TODAS LAS COMPAÑIAS","i":62,"k":"Sin Clave","l":"img_62","p":"$1.00","u":0,"v":1,"z":10},{"c":10,"d":"BARRA STOP DIRECCIONAL MOTO","i":88,"k":"Sin Clave","l":"img_88","p":"$140.00","u":0,"v":140,"z":10},{"c":10,"d":"PAR BARRA DRL NEON 17 CM AMBAR","i":87,"k":"Sin Clave","l":"img_87","p":"$100.00","u":0,"v":100,"z":10},{"c":10,"d":"PAR BARRA DRL NEON 17 CM AZUL HIELO","i":110,"k":"Sin Clave","l":"img_110","p":"$100.00","u":0,"v":100,"z":10},{"c":10,"d":"PAR BARRA DRL NEON 17 CM VERDE AGUA","i":106,"k":"Sin Clave","l":"img_106","p":"$100.00","u":0,"v":100,"z":10},{"c":10,"d":"TIRA LED CAJUELA SECUENCIAL DRL","i":122,"k":"Sin Clave","l":"img_122","p":"$380.00","u":0,"v":380,"z":10},{"c":10,"d":"TIRA LED DRL 45 CM BLANCO","i":111,"k":"Sin Clave","l":"img_111","p":"$220.00","u":0,"v":220,"z":10},{"c":10,"d":"TIRA LED DRL 45CM AZUL HIELO-AMBAR","i":112,"k":"Sin Clave","l":"img_112","p":"$220.00","u":0,"v":220,"z":10},{"c":10,"d":"TIRA LED DRL 60 CM ROJO-AMBAR","i":125,"k":"Sin Clave","l":"img_125","p":"$250.00","u":0,"v":250,"z":10},{"c":10,"d":"TIRA LED DRL BLANCO-AMBAR","i":124,"k":"Sin Clave","l":"img_124","p":"$250.00","u":0,"v":250,"z":10},{"c":10,"d":"TIRA LED DRL MULTICOLOR DIRECCIONAL","i":130,"k":"Sin Clave","l":"img_130","p":"$350.00","u":0,"v":350,"z":10},{"c":5,"d":"TIRA LED AMBAR 3528","i":132,"k":"Sin Clave","l":"img_132","p":"$160.00","u":0,"v":160,"z":10},{"c":5,"d":"TIRA LED AZUL 3528","i":136,"k":"Sin Clave","l":"img_136","p":"$160.00","u":0,"v":160,"z":10},{"c":5,"d":"TIRA LED BLANCA 3528","i":134,"k":"Sin Clave","l":"img_134","p":"$160.00","u":0,"v":160,"z":10},{"c":5,"d":"TIRA LED MULTICOLOR","i":5,"k":"Sin Clave","l":"img_5","p":"$200.00","u":0,"v":200,"z":10},{"c":5,"d":"TIRA LED RGB 5050 10 METROS","i":131,"k":"Sin Clave","l":"img_131","p":"$500.00","u":0,"v":500,"z":10},{"c":5,"d":"TIRA LED RGB 5050 2 METROS USB CONTROL","i":118,"k":"Sin Clave","l":"img_118","p":"$160.00","u":0,"v":160,"z":10},{"c":5,"d":"TIRA LED ROJA 3528","i":135,"k":"Sin Clave","l":"img_135","p":"$160.00","u":0,"v":160,"z":10},{"c":5,"d":"TIRA LED VERDE 3528","i":133,"k":"Sin Clave","l":"img_133","p":"$160.00","u":0,"v":160,"z":10}],"ctg":[{"i":8,"n":"ACCESORIOS"},{"i":7,"n":"AMPLIFICADORES"},{"i":6,"n":"AUTOESTEREOS"},{"i":1,"n":"BOCINA"},{"i":4,"n":"BOCINAS"},{"i":12,"n":"FAROS"},{"i":11,"n":"MODULOS"},{"i":9,"n":"SERVICIOS"},{"i":10,"n":"TIRAS DRL"},{"i":5,"n":"TIRAS LED"}],"und":[{"i":0,"n":"Sin Unidad"}],"ngc":"Accesorios Atro","tel2":"2411849197","cor2":"","dir2":"","alf":"Alfabeto","myp":"Mayor Precio","mnp":"Menor Precio","ctgs":"Categoría","orp":"Ordenar Por","bsc":"Buscar","crt":true,"nam":"Nombre","sct":"Comprar Ahora","ernw":"Error al conectarse al servidor, compruebe su conexión a internet e intente nuevamente.","img":true,"uni":true,"cla":false,"wha":true,"clo":"Cerrar","nxt":"Siguiente","prv":"Anterior","sin":"Sin Información","clt":"w3-indigo","tmp":1660136574321,"lg":"logo"} /*#d4t4#*/;
+		</script>
+    </body>
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-c659"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">para quejas y sugerencias llama al telefono: 247-256-4558</p>
+      </div></footer>
+    
+  
+</body></html>
